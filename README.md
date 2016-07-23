@@ -23,38 +23,44 @@ Build package:
     cd RPi-Monitor-deb
     ./build-deb.sh
    
-## Repository
+## Install
 
-Build script also create a debian repository. To use this repository follow the instruction bellow:
+    wget -O rpimonitor_2.10-1_all.deb https://github.com/XavierBerger/RPi-Monitor-deb/blob/master/repo/rpimonitor_2.10-1_all.deb?raw=true
+    sudo dpkg -i rpimonitor_2.10-1_all.deb
+    sudo apt-get -f install
 
-Activate https transport for apt:
-    
-    sudo apt-get install apt-transport-https ca-certificates
+~~## Repository~~
 
-Add my public key to the trusted key list for apt:
+~~Build script also create a debian repository. To use this repository follow the instruction bellow:~~
 
-    sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 2C0D3C0F
+~~Activate https transport for apt:~~
 
-Execute the following command to add rpimonitor into your list of repository:
+~~sudo apt-get install apt-transport-https ca-certificates~~
 
-    sudo wget http://goo.gl/rsel0F -O /etc/apt/sources.list.d/rpimonitor.list
+~~Add my public key to the trusted key list for apt:~~
 
-This will add the file `/etc/apt/source.list.d/rpimonitor.list` containing:
+~~sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 2C0D3C0F~~
 
-    # RPi-Monitor official repository
-    deb https://github.com XavierBerger/RPi-Monitor-deb/raw/master/repo/
+~~Execute the following command to add rpimonitor into your list of repository:~~
 
-**Note**: To test unstable version, replace *master* by *devel* into the upper line.
+~~sudo wget http://goo.gl/rsel0F -O /etc/apt/sources.list.d/rpimonitor.list~~
 
-Install **RPi-Monitor**
+~~This will add the file `/etc/apt/source.list.d/rpimonitor.list` containing:~~
 
-    sudo apt-get update
-    sudo apt-get install rpimonitor
+~~# RPi-Monitor official repository~~
+~~deb https://github.com XavierBerger/RPi-Monitor-deb/raw/master/repo/~~
 
-For update (when a new release of RPi-Monitor is available)
-  
-    sudo apt-get update
-    sudo apt-get upgrade
+~~**Note**: To test unstable version, replace *master* by *devel* into the upper line.~~
+
+~~Install **RPi-Monitor**~~
+
+~~sudo apt-get update~~
+~~sudo apt-get install rpimonitor~~
+
+~~For update (when a new release of RPi-Monitor is available)~~
+
+~~sudo apt-get update~~
+~~sudo apt-get upgrade~~
 
 
 ## Authors
